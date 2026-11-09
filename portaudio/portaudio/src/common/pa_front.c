@@ -69,6 +69,12 @@
 #include <assert.h> /* needed by PA_VALIDATE_ENDIANNESS */
 
 #include "portaudio.h"
+
+/* Fallback for older portaudio.h that lacks this constant */
+#ifndef paCanNotInitializeRecursively
+#define paCanNotInitializeRecursively (-9971)
+#endif
+
 #include "pa_util.h"
 #include "pa_endianness.h"
 #include "pa_types.h"
